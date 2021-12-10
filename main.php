@@ -1,4 +1,28 @@
+<?php
 
+	require 'config/config.php';
+
+	// DB Connection.
+	$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+	if ( $mysqli->connect_errno ) {
+		echo $mysqli->connect_error;
+		exit();
+	}
+
+	$mysqli->set_charset('utf8');
+
+	//countries
+	$sql = "SELECT * FROM countries;";
+	$results = $mysqli -> query($sql);
+	if (!$results){
+		echo $mysqli -> error;
+		exit();
+	}
+
+	// Close DB Connection
+	$mysqli->close();
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +43,7 @@
 <body>
 
     <!--Navbar-->
-    
+
         
     
     <div id="background">
@@ -38,8 +62,19 @@
         <!-- country select button? thingy here-->
         <div id ="select">
             <select class="form-select form-select-md" id="country-select">
-                <option selected disabled>Select a country</option>
-                
+                <option disabled>Select a country</option>
+                <?php while( $row = $results->fetch_assoc() ): ?>
+                    <?php if ($row['code'] == "US") : ?>
+                        <option selected value="<?php echo $row['code']; ?>">
+                            <?php echo $row['name']; ?>
+                        </option>
+
+                    <?php else: ?>
+                        <option value="<?php echo $row['code']; ?>">
+                            <?php echo $row['name']; ?>
+                        </option>
+                    <?php endif; ?>
+                <?php endwhile; ?>
             </select>
         </div>
 

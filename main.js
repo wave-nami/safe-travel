@@ -6,6 +6,7 @@ function display(results){
     console.log(i);
 
     
+
 } //FUNCTION END
 
 
@@ -19,7 +20,10 @@ function errordisplay(){
 //FUNCTION for running API 
 function runAPI(countrycode){
     // getting acess token
-    
+
+        var apiKey = "MeAqoFPA7fwUA7KkCQbyQ89ohze1XAYg";
+        var apiSec = "VOMwuGhrDcE7ZlZW";
+
         var url = "https://test.api.amadeus.com/v1/security/oauth2/token";
     
         var xhr = new XMLHttpRequest();
@@ -27,8 +31,11 @@ function runAPI(countrycode){
     
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     
-        var data = "grant_type=client_credentials&client_id=WEXPfw0AenYk59CahpUWp44VOYzTA0Em&client_secret=ZLn1LSM4XA2ZM78Q";
-    
+        var data = "grant_type=client_credentials&client_id="+apiKey+"&client_secret="+apiSec+"";
+        console.log(apiKey);
+        console.log(apiSec);
+        console.log(data);
+
         xhr.send(data);
     
         xhr.onreadystatechange = function () {
@@ -92,5 +99,7 @@ runAPI("US");
 
 // what happens when you change the select
 document.querySelector("#country-select").onchange = function(){
-    
+    let cCode = document.querySelector("#country-select").value;
+    console.log(cCode);
+    runAPI(cCode);
     }
