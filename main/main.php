@@ -30,9 +30,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     
     <title>Safe Travel Planner</title>
+    <link rel="icon" type="image/x-icon" href="img/logo.jpeg">
 
     <!--CSS stylesheet and bootstrap-->
     <link rel="stylesheet" href="main.css"/>
@@ -43,7 +43,7 @@
 <body>
 
     <!--Navbar-->
-
+    <?php include 'config/nav.php'; ?>
         
     
     <div id="background">
@@ -53,7 +53,7 @@
                 <h3 class="card-header">Welcome to Safe Travel Planner!</h3>
                 <div class="card-body">
                     <h5 class="card-title">What is Safe Travel Planner?</h5>
-                    <p class="card-text">-proj description-</p>
+                    <p class="card-text">Safe Travel Planner is a website that helps you make an informed decision about traveling overseas during the pandemic. With the spreading of COVID-19, many people have been unable to see their loved ones that live abroad. It’s important today to make an informed decision so that you can travel safely to another country. This page displays information on travel restrictions for different countries. You can also register and log in to read other user’s travel plans and experiences, and also share your own by writing a blog. Hope you enjoy!</p>
                     <a href="register_form.php" class="btn btn-primary">Create Your Account Here</a>
                 </div>
             </div>
@@ -64,11 +64,11 @@
             <select class="form-select form-select-md" id="country-select">
                 <option disabled>Select a country</option>
                 <?php while( $row = $results->fetch_assoc() ): ?>
+
                     <?php if ($row['code'] == "US") : ?>
                         <option selected value="<?php echo $row['code']; ?>">
                             <?php echo $row['name']; ?>
                         </option>
-
                     <?php else: ?>
                         <option value="<?php echo $row['code']; ?>">
                             <?php echo $row['name']; ?>
@@ -536,8 +536,24 @@
                                     <div id="loc-text">
                                     </div>
 
+                                    <!-- <p class= "mb0 button">
+                                        <button class="btn btn-sm btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#localScrolling" aria-controls="offcanvasScrolling">
+                                            Read more
+                                        </button>
+                                    </p> -->
+
                                     <small class="text-muted" id="loc-date"></small>
                                 </div>
+    
+                            <!-- <div class="offcanvas offcanvas-start" data-bs-scroll="false" data-bs-backdrop="true" tabindex="-1" id="localScrolling" aria-labelledby="offcanvasScrollingLabel">
+                                <div class="offcanvas-header">
+                                    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Local Area Policy</h5>
+                                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body" id="loc-text">
+                                </div>
+                            </div> -->
+    
     
                         </div>
                     </div>
