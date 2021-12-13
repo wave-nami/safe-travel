@@ -1,5 +1,14 @@
+@font-face{
+    font-family: work sans, sans-serif !important;
+    src: url("Work_Sans/WorkSans-VariableFont_wght.ttf") format('truetype');
+}
+
 html body{
     background-color: rgb(208, 208, 208);
+}
+
+body{
+    font-family: work sans !important;
     color: #393D3F !important;
 }  
 
@@ -131,7 +140,7 @@ a{
 #page{
     margin-top: 50px;
     padding-top: 50px;
-    width: 500px;
+    width: 450px;
     border: 5px solid black;
     background-color: white;
 }
@@ -149,7 +158,7 @@ a{
 }
 
 .welcome{
-    width: 400px;
+    width: 375px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -169,10 +178,6 @@ a{
 
 /* Desktop, large */
 @media (min-width: 992px){
-    html body{
-        background-color: rgb(208, 208, 208);
-    }
-
     #background{
         margin-left: auto;
         margin-right: auto;
