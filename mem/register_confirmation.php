@@ -34,7 +34,7 @@
             $admin = 0;
 
             // checking if they got the admin-code right
-            $adminCode = "admincode";
+            $adminCode = "A5wQSkfNn4";
             if ( isset($_POST['admin-code']) || !empty($_POST['admin-code'])) {
                 if ($_POST['admin-code'] == $adminCode){
                     //1 indicates that they ARE admin
@@ -66,9 +66,9 @@
     <meta charset="UTF-8">
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     
-    <title>Registeration Confirmation</title>
+    <title>Registeration Confirmation | Safe Travel Planner</title>
+    <link rel="icon" type="image/x-icon" href="img/logo.jpeg">
 
     <!--CSS stylesheet and bootstrap-->
     <link rel="stylesheet" href="main.css"/>

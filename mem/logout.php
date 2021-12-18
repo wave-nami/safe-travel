@@ -12,8 +12,8 @@
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    
-    <title>Log Out</title>
+    <title>Log Out | Safe Travel Planner</title>
+    <link rel="icon" type="image/x-icon" href="img/logo.jpeg">
 
     <!--CSS stylesheet and bootstrap-->
     <link rel="stylesheet" href="main.css"/>
